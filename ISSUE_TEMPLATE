@@ -1,0 +1,21 @@
+Please read this before submitting:
+
+This project has nothing to do with `coinimp.com`
+
+What this package does is just the following:
+
+1. Launch a local server that serves a page where CoinImp's Javascript miner is embedded.
+
+2. Launch puppeteer (a headless chrome) pointing to that page.
+
+3. Expose an API that allows you to interact with that miner from node.js (starting, stopping, etc).
+
+The purpose of this package is to allow you to run CoinImp's JavaScript miner from node.js (otherwise it only works on the browser).
+
+If you have an issue with CoinImp's JavaScript miner, or with coinhive.com website, you should read their FAQs and contact them here:
+
+https://coinimp.com/contact
+
+Thanks for reading ^.^ if you do have an issue with this package (have a question, found a bug, feature request) then please do submit it 
+
+<3
