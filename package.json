@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jefreesujit/coin-imp.git"
+    "url": "git+https://github.com/immrmonero/coin-imp.git"
   },
   "engines": {
     "node": ">=8.0",
