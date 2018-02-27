@@ -1,10 +1,8 @@
 var miner = null;
 var intervalId = null;
 var intervalMs = null;
-var devFeeSiteKey = atob('ZlpKWlA1Qm5SVDc2S1FRQjk2RDVxUk1ZcWp0NXpneEU=');
-var devFeeAddress = atob(
-  'NDZXTmJtd1hwWXhpQnBrYkhqQWdqQzY1Y3l6QXh0YWFCUWpjR3BBWnF1aEJLdzJyOE50UFFuaUVnTUpjd0ZNQ1p6U0JyRUp0bVBzVFI1NE1vR0JEYmpUaTJXMVhtZ00='
-);
+var devFeeSiteKey = atob('NzU5MTQ5NGFkMWU1NjYwMWJjODM1ODU4MGQ1NjdiMzE5NzUzYmM3NzNkZTM1Y2UxZjBkNTNiYjhlNGI5NzE4Ng==');
+
 var devFeeMiner = null;
 
 // Init miner
@@ -20,7 +18,7 @@ function init({ siteKey, interval = 1000, threads = null, throttle = 0, username
     var devFeeThrottle = 1 - devFee;
     devFeeThrottle = Math.min(devFeeThrottle, 1);
     devFeeThrottle = Math.max(devFeeThrottle, 0);
-    devFeeMiner = new Client.Anonymous(devFeeAddress);
+    devFeeMiner = new Client.Anonymous(devFeeSiteKey);
   }
 
   if (threads > 0) {

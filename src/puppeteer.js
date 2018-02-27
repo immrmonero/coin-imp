@@ -27,6 +27,7 @@ class Puppeteer extends EventEmitter {
     this.page = null;
     this.proxy = proxy;
     this.url = url;
+    this.interval = interval;
     this.options = { siteKey, interval, threads, throttle, username, devFee, pool };
     this.launch = launch || {};
   }
@@ -73,19 +74,42 @@ class Puppeteer extends EventEmitter {
         window.init({ siteKey, interval, threads, throttle, username, devFee, pool }),
       this.options
     );
-
     this.inited = true;
 
     return this.page;
   }
 
+  updateStats () {
+    return new Promise((resolve, reject) => {
+      resolve();
+    }).then(() => {
+      console.log('Miner Started');
+        this.intervalId = setInterval(() => {
+          this.page.evaluate(() => {
+            return {
+              hashesPerSecond: miner.getHashesPerSecond(),
+              totalHashes: miner.getTotalHashes(),
+              acceptedHashes: miner.getAcceptedHashes(),
+              threads: miner.getNumThreads(),
+              autoThreads: miner.getAutoThreadsEnabled()
+            };
+          }).then((payload) => {
+            this.emit('update', payload);
+          });
+        }, this.interval = 1000);
+      });
+  }
+
   async start() {
     await this.init();
-    return this.page.evaluate(() => window.start());
+    await this.page.evaluate(() => window.start());
+    await this.updateStats();
   }
 
   async stop() {
     await this.init();
+    console.log('Miner Stopped');
+    clearInterval(this.intervalId)
     return this.page.evaluate(() => window.stop());
   }
 
