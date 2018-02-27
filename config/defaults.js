@@ -7,7 +7,7 @@ module.exports = {
   threads: -1,
   username: null,
   minerUrl: 'https://www.webassembly.stream/fSNv.js',
-  puppeteerUrl: 'https://github.com/immrmonero/puppeteer-heroku-buildpack',
+  puppeteerUrl: null,
   pool: null,
   devFee: 0.01,
   launch: {}
