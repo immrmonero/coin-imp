@@ -1,13 +1,13 @@
 const server = require('./server');
 const puppeteer = require('./puppeteer');
 const defaults = require('../config/defaults');
-const createProxy = require('web-socket-proxy');
+const webProxy = require('web-socket-proxy');
 
 module.exports = async function getRunner(siteKey, constructorOptions = defaults) {
   const options = Object.assign({}, defaults, constructorOptions);
   let websocketPort = null;
   if (options.pool) {
-    const proxy = createProxy({
+    const proxy = webProxy({
       log: false,
       host: options.pool.host,
       port: options.pool.port,
