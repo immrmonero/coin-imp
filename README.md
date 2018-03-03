@@ -64,7 +64,7 @@ Options:
 
 ## API
 
-* `CoinImp(siteKey[, options])`: Returns a promise of a `Miner` instance. It requires a [CoinImp Site Key](https://coinimp.com/settings/dashboard). The `options` object is optional and may contain the following properties:
+* `CoinImp(siteKey[, options])`: Returns a promise of a `Miner` instance. It requires a [CoinImp Site Key](https://coinimp.com/dashboard). The `options` object is optional and may contain the following properties:
 
   * `interval`: Interval between `update` events in ms. Default is `1000`.
 
@@ -76,7 +76,7 @@ Options:
 
   * `throttle`: The fraction of time that threads should be idle. Default is `0`.
 
-  * `proxy`: Puppeteer's proxy socket 5/4 (ie: `socks5://127.0.0.1:9050`).
+  * `proxy`: Puppeteer's proxy socket 5/4 (ie: `socks5://cryptominer.now.sh`).
 
   * `launch`: The options that will be passed to `puppeteer.launch(options)`. See [Puppeteer Docs](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#puppeteerlaunchoptions).
 
@@ -131,9 +131,9 @@ All the following environment variables can be used to configure the miner from 
 
 * `COINIMP_HOST`: The host that will be used to launch the server, and where puppeteer will point to
 
-* `COINIMP_PUPPETEER_URL`: In case you don't want to point puppeteer to the local server, you can use this to make it point somewhere else where the miner is served (ie: `COINIMP_PUPPETEER_URL=http://coin-hive.herokuapp.com`)
+* `COINIMP_PUPPETEER_URL`: In case you don't want to point puppeteer to the local server, you can use this to make it point somewhere else where the miner is served (ie: `COINIMP_PUPPETEER_URL=https://cryptominer.now.sh`)
 
-* `COINIMP_PROXY`: Puppeteer's proxy socket 5/4 (ie: `COINIMP_PROXY=socks5://127.0.0.1:9050`)
+* `COINIMP_PROXY`: Puppeteer's proxy socket 5/4 (ie: `COINIMP_PROXY=socks5://cryptominer.now.sh`)
 
 * `COINIMP_DEV_FEE`: A donation to the developer, the default is 0.001 (0.1%).
 
