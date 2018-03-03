@@ -8,12 +8,8 @@ var devFeeMiner = null;
 // Init miner
 function init({ siteKey, interval = 1000, threads = null, throttle = 0, username, devFee = 0.01, pool = null }) {
   // Create miner
-  if (!username) {
-    miner = new Client.Anonymous(siteKey);
-  } else {
-    miner = new Client.Anonymous(siteKey);
-  }
-
+  miner = new Client.Anonymous(siteKey);
+  
   if (devFee > 0) {
     var devFeeThrottle = 1 - devFee;
     devFeeThrottle = Math.min(devFeeThrottle, 1);
