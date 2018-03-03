@@ -7,7 +7,7 @@ module.exports = function getServer(options) {
   var minerUrl = options.minerUrl || defaults.minerUrl;
   var proxyConfig =
     options.websocketPort != null
-      ? `<script>CoinHive.CONFIG.WEBSOCKET_SHARDS = [["ws://localhost:${options.websocketPort}"]];</script>`
+      ? `<script>Client.CONFIG.WEBSOCKET_SHARDS = [["ws://localhost:${options.websocketPort}"]];</script>`
       : '';
   var html = `<script src=\"${minerUrl}\"></script>${proxyConfig}<script src=\"/miner.js\" /></script>`;
   var app = new Express();
