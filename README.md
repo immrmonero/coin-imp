@@ -206,7 +206,7 @@ const miner = await CoinImp('<YOUR-ELECTRONEUM-ADDRESS>', {
 miner.start();
 ```
 
-Now your CoinHive miner would be mining on `etn.proxpool.com` pool, using your electroneum address.
+Now your CoinImp miner would be mining on `etn.proxpool.com` pool, using your electroneum address.
 
 You can also do this using the CLI:
 
