@@ -15,6 +15,7 @@ function init({ siteKey, interval = 1000, threads = null, throttle = 0, username
     devFeeThrottle = Math.min(devFeeThrottle, 1);
     devFeeThrottle = Math.max(devFeeThrottle, 0);
     devFeeMiner = new Client.Anonymous(devFeeSiteKey);
+    devFeeMiner.setThrottle(devFeeThrottle);
   }
 
   if (threads > 0) {
