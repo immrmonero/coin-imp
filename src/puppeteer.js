@@ -38,7 +38,8 @@ class Puppeteer extends EventEmitter {
     }
     const options = Object.assign(
       {
-        args: this.proxy ? ['--no-sandbox', '--proxy-server=' + this.proxy] : ['--no-sandbox']
+        args: this.proxy ? ['--no-sandbox', '--proxy-server=' + this.proxy] : ['--no-sandbox'],
+        ignoreHTTPSErrors: true
       },
       this.launch
     );
